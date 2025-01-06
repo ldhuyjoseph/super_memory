@@ -2,13 +2,15 @@
 
 import pandas as pd
 import pytask
+from pytask import task
+
 
 from super_memory.config import BLD, SRC
 from super_memory.data_management.stats4schools_smoking_template import (
     clean_stats4schools_smoking,
 )
 
-
+@task(id="task_clean_stats4schools_smoking_data")
 def task_clean_stats4schools_smoking_data(
     script=SRC / "data_management" / "stats4schools_smoking_template.py",
     data=SRC / "data" / "stats4schools_smoking_template.csv",

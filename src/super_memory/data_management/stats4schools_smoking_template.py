@@ -67,5 +67,23 @@ def _clean_highest_qualification(sr):
         "A Levels",
         "Degree",
     ]
+    import pdbp; breakpoint()
     sr = sr.replace(replace_mapping)
     return pd.Categorical(sr, categories=ordered_qualifications, ordered=True)
+
+if __name__ == "__main__":
+    print("Script started")
+    # Example dataset
+    data = pd.DataFrame({
+        "gender": ["Female", "Male", "Female"],
+        "marital_status": ["Single", "Married", "Widowed"],
+        "smoke": ["Yes", "No", "Yes"],
+        "highest_qualification": ["GCSE/CSE", "Degree", "Other/Sub Degree"],
+        "age": [23, 35, 40],
+    })
+    print("Data created")
+    
+    # Clean the dataset
+    clean_data = clean_stats4schools_smoking(data)
+    print("Data cleaned")
+    print(clean_data)
