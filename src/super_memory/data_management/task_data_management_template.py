@@ -12,7 +12,7 @@ from super_memory.data_management.stats4schools_smoking_template import (
 def task_clean_stats4schools_smoking_data(
     script=SRC / "data_management" / "stats4schools_smoking_template.py",
     data=SRC / "data" / "stats4schools_smoking_template.csv",
-    produces=BLD / "data" / "stats4schools_smoking.pickle",
+    produces=BLD / "data" / "data_cleaned.pickle",
 ):
     """Clean the stats4schools smoking data set."""
     data = pd.read_csv(data)
